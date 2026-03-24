@@ -1,0 +1,51 @@
+.card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: var(--transition);
+  }
+  
+  /* Variants */
+  .default {
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+  }
+  
+  .elevated {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .outlined {
+    border: 1px solid var(--color-border);
+    background-color: transparent;
+  }
+  
+  /* Hoverable */
+  .hoverable {
+    cursor: pointer;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  
+  .hoverable:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Card sections */
+  .cardHeader {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+    font-weight: 600;
+    font-family: var(--font-primary);
+    color: var(--color-title);
+  }
+  
+  .cardBody {
+    padding: var(--spacing-md);
+  }
+  
+  .cardFooter {
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+    background-color: rgba(0, 0, 0, 0.02);
+  }

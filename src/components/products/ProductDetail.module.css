@@ -1,0 +1,333 @@
+.productDetail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  /* Galerie */
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .mainImage {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background-color: var(--color-bg);
+  }
+  
+  .mainImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .mainImg:hover {
+    transform: scale(1.02);
+  }
+  
+  .thumbnails {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+  }
+  
+  .thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: var(--transition);
+    background: none;
+    padding: 0;
+  }
+  
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .thumbnail.active {
+    border-color: var(--color-primary);
+  }
+  
+  .thumbnail:hover:not(.active) {
+    border-color: var(--color-border);
+    transform: scale(1.05);
+  }
+  
+  /* Informations */
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .header {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+  }
+  
+  .category {
+    text-transform: uppercase;
+  }
+  
+  .newBadge {
+    background-color: var(--color-accent);
+    color: var(--color-wood-dark);
+  }
+  
+  .soldoutBadge {
+    background-color: var(--color-text-muted);
+  }
+  
+  .name {
+    font-family: var(--font-primary);
+    font-size: clamp(24px, 3vw, 32px);
+    color: var(--color-title);
+    margin: 0;
+  }
+  
+  .priceSection {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-sm);
+  }
+  
+  .price {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  
+  .oldPrice {
+    font-size: 18px;
+    color: var(--color-text-muted);
+    text-decoration: line-through;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-accent);
+    font-size: 16px;
+  }
+  
+  .reviewCount {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-left: var(--spacing-xs);
+  }
+  
+  .divider {
+    height: 2px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--color-primary) 0, var(--color-primary) 12px,
+      var(--color-accent) 12px, var(--color-accent) 24px,
+      var(--color-forest) 24px, var(--color-forest) 36px
+    );
+    margin: var(--spacing-sm) 0;
+    border-radius: 2px;
+  }
+  
+  .sectionTitle {
+    font-family: var(--font-primary);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-title);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .description p {
+    color: var(--color-text);
+    line-height: 1.8;
+  }
+  
+  .specsList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .specsList li {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .specLabel {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  
+  .specValue {
+    color: var(--color-text-muted);
+  }
+  
+  /* Quantité */
+  .quantitySection {
+    margin-top: var(--spacing-sm);
+  }
+  
+  .quantitySelector {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+  }
+  
+  .qtyBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-white);
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .qtyBtn:hover:not(:disabled) {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+  }
+  
+  .qtyBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .qtyValue {
+    font-size: 18px;
+    font-weight: 600;
+    min-width: 40px;
+    text-align: center;
+  }
+  
+  /* Actions */
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+  }
+  
+  .addToCartBtn {
+    background-color: var(--color-primary);
+  }
+  
+  .addToCartBtn:hover {
+    background-color: var(--color-secondary);
+  }
+  
+  .whatsappBtn {
+    background-color: #25D366;
+  }
+  
+  .whatsappBtn:hover {
+    background-color: #1ebe5d;
+  }
+  
+  .waIcon {
+    font-size: 18px;
+  }
+  
+  /* Notes */
+  .notes {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--color-bg);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-accent);
+  }
+  
+  .note {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+  
+  .note:first-child {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .productDetail {
+      grid-template-columns: 1fr;
+      padding: var(--spacing-md);
+      gap: var(--spacing-lg);
+    }
+  
+    .thumbnail {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .price {
+      font-size: 24px;
+    }
+  
+    .oldPrice {
+      font-size: 16px;
+    }
+  
+    .specsList li {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+  
+    .specValue {
+      margin-left: var(--spacing-md);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .productDetail {
+      padding: var(--spacing-sm);
+    }
+  
+    .thumbnail {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .name {
+      font-size: 20px;
+    }
+  }
+  /* Ajouter à la fin du fichier ProductDetail.module.css */
+.productSpecs {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .productSpecs li {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .productSpecs li strong {
+    color: var(--color-text);
+  }

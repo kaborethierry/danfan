@@ -1,0 +1,204 @@
+.aboutPage {
+    background-color: var(--color-bg);
+  }
+  
+  .aboutHero {
+    background-color: var(--color-wood-dark);
+    padding: 64px var(--spacing-md) 48px;
+    text-align: center;
+  }
+  
+  .aboutHeroTitle {
+    font-family: var(--font-primary);
+    font-size: clamp(36px, 5vw, 64px);
+    color: var(--color-white);
+  }
+  
+  .aboutHeroSub {
+    color: var(--color-accent);
+    font-size: 18px;
+    font-style: italic;
+    margin-top: var(--spacing-sm);
+  }
+  
+  .aboutStripe {
+    height: 6px;
+    margin-top: var(--spacing-md);
+    background: repeating-linear-gradient(
+      90deg,
+      var(--color-primary) 0, var(--color-primary) 20px,
+      var(--color-accent) 20px, var(--color-accent) 40px,
+      var(--color-forest) 40px, var(--color-forest) 60px
+    );
+  }
+  
+  .aboutStory {
+    padding: var(--spacing-xl) var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .aboutStoryGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+  }
+  
+  .aboutStoryImage {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .aboutStoryImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .aboutStoryText {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .aboutTag {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 14px;
+    border-radius: var(--radius-full);
+    width: fit-content;
+  }
+  
+  .aboutStoryTitle {
+    font-family: var(--font-primary);
+    font-size: clamp(24px, 3vw, 36px);
+    color: var(--color-title);
+  }
+  
+  .aboutStoryText p {
+    color: var(--color-text);
+    line-height: 1.85;
+  }
+  
+  .aboutContacts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+  }
+  
+  .aboutContactItem {
+    color: var(--color-forest);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color var(--transition);
+  }
+  
+  .aboutContactItem:hover {
+    color: var(--color-primary);
+  }
+  
+  .aboutValeurs {
+    background-color: var(--color-forest);
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+  }
+  
+  .aboutValeursTitle {
+    font-family: var(--font-primary);
+    font-size: clamp(28px, 4vw, 44px);
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .aboutValeursGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .aboutValeurCard {
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .aboutValeurNum {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-accent);
+    opacity: 0.5;
+  }
+  
+  .aboutValeurTitre {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    color: var(--color-white);
+    margin: var(--spacing-sm) 0;
+  }
+  
+  .aboutValeurDesc {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  
+  .aboutCta {
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+    background-color: var(--color-bg);
+  }
+  
+  .aboutCtaTitle {
+    font-family: var(--font-primary);
+    font-size: 32px;
+    color: var(--color-title);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .aboutCtaBtn {
+    display: inline-block;
+    padding: 14px 40px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--radius-full);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  
+  .aboutCtaBtn:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  @media (max-width: 992px) {
+    .aboutValeursGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .aboutStoryGrid {
+      grid-template-columns: 1fr;
+    }
+    
+    .aboutValeursGrid {
+      grid-template-columns: 1fr;
+    }
+  }

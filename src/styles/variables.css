@@ -1,0 +1,45 @@
+:root {
+    /* === PALETTE DANFANIMENT === */
+    --color-primary:     #C0392B;   /* Rouge orangé — accentuation principale */
+    --color-secondary:   #D4550A;   /* Orange vif — boutons secondaires */
+    --color-accent:      #E8A020;   /* Jaune doré — highlights, hover */
+    --color-olive:       #5A8020;   /* Vert olive — badges, tags */
+    --color-forest:      #2D6A1F;   /* Vert foncé — footer, liens actifs */
+    --color-wood-light:  #8B5E3C;   /* Brun bois clair */
+    --color-wood-dark:   #4A2B0F;   /* Brun bois foncé */
+    --color-title:       #1A6B2A;   /* Vert titre "DanFaniment" */
+    --color-tagline:     #C0392B;   /* Rouge tagline */
+  
+    /* === NEUTRES === */
+    --color-white:       #FFFFFF;
+    --color-bg:          #FDF8F3;   /* Fond crème chaud */
+    --color-text:        #1A1A1A;
+    --color-text-muted:  #6B6B6B;
+    --color-border:      rgba(139, 94, 60, 0.2);
+  
+    /* === ESPACEMENTS === */
+    --spacing-xs:  4px;
+    --spacing-sm:  8px;
+    --spacing-md:  16px;
+    --spacing-lg:  32px;
+    --spacing-xl:  64px;
+  
+    /* === TYPOGRAPHIE === */
+    --font-primary:   'Playfair Display', Georgia, serif;
+    --font-secondary: 'Inter', sans-serif;
+    --font-accent:    'Lato', sans-serif;
+  
+    /* === RADIUS === */
+    --radius-sm:  6px;
+    --radius-md:  12px;
+    --radius-lg:  20px;
+    --radius-full: 9999px;
+  
+    /* === TRANSITIONS === */
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+    /* === OMBRES === */
+    --shadow-sm: 0 2px 8px rgba(192,57,43,0.10);
+    --shadow-md: 0 4px 24px rgba(192,57,43,0.15);
+    --shadow-lg: 0 8px 48px rgba(192,57,43,0.20);
+  }

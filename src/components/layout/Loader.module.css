@@ -1,0 +1,48 @@
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-bg);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeOut 0.5s ease forwards 1s;
+  }
+  
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  .spinner {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--spacing-lg);
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-primary);
+    border-right-color: var(--color-accent);
+    border-radius: 50%;
+    animation: rotateLoader 0.8s linear infinite;
+  }
+  
+  .logo {
+    font-family: var(--font-primary);
+    font-size: 32px;
+    color: var(--color-title);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .tagline {
+    color: var(--color-primary);
+    font-size: 14px;
+    font-style: italic;
+  }

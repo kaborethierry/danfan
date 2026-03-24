@@ -1,0 +1,148 @@
+.collectionsPage {
+    background-color: var(--color-bg);
+  }
+  
+  .collectionsHeader {
+    background-color: var(--color-wood-light);
+    padding: 64px var(--spacing-md) 48px;
+    text-align: center;
+  }
+  
+  .collectionsTitle {
+    font-family: var(--font-primary);
+    font-size: clamp(36px, 5vw, 60px);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .collectionsSubtitle {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 17px;
+    max-width: 600px;
+    margin: 0 auto var(--spacing-md);
+    line-height: 1.7;
+  }
+  
+  .collectionsStripe {
+    height: 6px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--color-accent) 0, var(--color-accent) 20px,
+      var(--color-primary) 20px, var(--color-primary) 40px,
+      var(--color-forest) 40px, var(--color-forest) 60px
+    );
+    margin-top: var(--spacing-md);
+  }
+  
+  .collectionsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: var(--spacing-xl) auto;
+    padding: 0 var(--spacing-md);
+  }
+  
+  .collectionCard {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition);
+    display: block;
+    background: var(--color-white);
+  }
+  
+  .collectionCard:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .collectionCard:hover .collectionOverlay {
+    opacity: 1;
+  }
+  
+  .collectionCardImg {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+  }
+  
+  .collectionCardImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  
+  .collectionCard:hover .collectionCardImg img {
+    transform: scale(1.06);
+  }
+  
+  .collectionOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(192, 57, 43, 0.45), rgba(45, 106, 31, 0.45));
+    opacity: 0;
+    transition: opacity var(--transition);
+  }
+  
+  .collectionCardBody {
+    padding: var(--spacing-md);
+  }
+  
+  .collectionCardTitle {
+    font-family: var(--font-primary);
+    font-size: 22px;
+    color: var(--color-title);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .collectionCardCount {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .collectionCardLink {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+  
+  .collectionsValues {
+    background-color: var(--color-forest);
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+  
+  .collectionsValuesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .valueCard {
+    padding: var(--spacing-md);
+  }
+  
+  .valueTitle {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .valueDesc {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 768px) {
+    .collectionsValuesGrid {
+      grid-template-columns: 1fr;
+    }
+  }

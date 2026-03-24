@@ -1,0 +1,199 @@
+.contactPage {
+    background-color: var(--color-bg);
+  }
+  
+  .contactHero {
+    background-color: var(--color-primary);
+    padding: 56px var(--spacing-md) 40px;
+    text-align: center;
+  }
+  
+  .contactHeroTitle {
+    font-family: var(--font-primary);
+    font-size: clamp(32px, 5vw, 56px);
+    color: var(--color-white);
+  }
+  
+  .contactHeroSub {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+    margin-top: var(--spacing-sm);
+  }
+  
+  .contactStripe {
+    height: 5px;
+    margin-top: var(--spacing-md);
+    background: repeating-linear-gradient(
+      90deg, var(--color-accent) 0, var(--color-accent) 20px,
+      var(--color-forest) 20px, var(--color-forest) 40px
+    );
+  }
+  
+  .contactContainer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-xl);
+    max-width: 1100px;
+    margin: var(--spacing-xl) auto;
+    padding: 0 var(--spacing-md);
+  }
+  
+  .contactInfoBlock {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .contactInfoTitle {
+    font-family: var(--font-primary);
+    font-size: 24px;
+    color: var(--color-title);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .contactInfoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .contactInfoLabel {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+  
+  .contactInfoValue {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  
+  .contactInfoValue:hover {
+    color: var(--color-primary);
+  }
+  
+  .contactBtnWa {
+    display: inline-block;
+    margin-top: var(--spacing-lg);
+    padding: 14px 24px;
+    background-color: #25D366;
+    color: var(--color-white);
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transition);
+  }
+  
+  .contactBtnWa:hover {
+    background-color: #1ebe5d;
+    transform: translateY(-2px);
+  }
+  
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .contactFormTitle {
+    font-family: var(--font-primary);
+    font-size: 24px;
+    color: var(--color-title);
+  }
+  
+  .contactFormRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .contactField {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .contactLabel {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  
+  .contactInput,
+  .contactTextarea {
+    padding: 12px var(--spacing-md);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-family: var(--font-secondary);
+    color: var(--color-text);
+    background-color: var(--color-white);
+    transition: border-color var(--transition), box-shadow var(--transition);
+    outline: none;
+  }
+  
+  .contactInput:focus,
+  .contactTextarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+  }
+  
+  .contactTextarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+  
+  .contactSuccessMsg {
+    color: var(--color-forest);
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .contactErrorMsg {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .contactBtnSubmit {
+    padding: 14px var(--spacing-lg);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    align-self: flex-start;
+  }
+  
+  .contactBtnSubmit:hover:not(:disabled) {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .contactBtnSubmit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  @media (max-width: 768px) {
+    .contactContainer {
+      grid-template-columns: 1fr;
+    }
+    
+    .contactFormRow {
+      grid-template-columns: 1fr;
+    }
+    
+    .contactBtnSubmit {
+      width: 100%;
+    }
+  }

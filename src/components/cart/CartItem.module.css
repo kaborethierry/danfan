@@ -1,0 +1,88 @@
+.item {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+  }
+  
+  .image {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .info {
+    flex: 1;
+  }
+  
+  .name {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-title);
+    margin-bottom: 4px;
+  }
+  
+  .price {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .quantity {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .qtyBtn {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-border);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: var(--transition);
+  }
+  
+  .qtyBtn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  
+  .qtyValue {
+    min-width: 24px;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  .removeBtn {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 12px;
+    cursor: pointer;
+    transition: color var(--transition);
+  }
+  
+  .removeBtn:hover {
+    color: var(--color-primary);
+  }
+  
+  .subtotal {
+    font-weight: 600;
+    color: var(--color-primary);
+    align-self: center;
+  }

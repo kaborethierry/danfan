@@ -1,0 +1,130 @@
+.hero {
+    min-height: 100vh;
+    background-image: url('/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(192, 57, 43, 0.75), rgba(45, 106, 31, 0.6));
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1;
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+  
+  .title {
+    font-family: var(--font-primary);
+    font-size: clamp(48px, 8vw, 72px);
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .sloganContainer {
+    min-height: 80px;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+  }
+  
+  .slogan {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    margin: 0;
+  }
+  
+  .slogan.active {
+    opacity: 1;
+  }
+  
+  .slogan.accent {
+    color: var(--color-accent);
+  }
+  
+  .slogan.tagline {
+    color: var(--color-tagline);
+  }
+  
+  .slogan:not(.accent):not(.tagline) {
+    color: var(--color-white);
+  }
+  
+  .buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--spacing-lg);
+  }
+  
+  .btnPrimary {
+    padding: 14px 32px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--radius-full);
+    font-size: 16px;
+    font-weight: 600;
+    transition: var(--transition);
+  }
+  
+  .btnPrimary:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .btnWhatsapp {
+    padding: 14px 32px;
+    background-color: transparent;
+    border: 2px solid var(--color-white);
+    color: var(--color-white);
+    border-radius: var(--radius-full);
+    font-size: 16px;
+    font-weight: 600;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .btnWhatsapp:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+  }
+  
+  .waIcon {
+    font-size: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .btnPrimary, .btnWhatsapp {
+      width: 100%;
+      max-width: 280px;
+      justify-content: center;
+    }
+  }

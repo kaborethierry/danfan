@@ -1,0 +1,63 @@
+.boutiquePage {
+    background-color: var(--color-bg);
+    min-height: 100vh;
+  }
+  
+  .boutiqueHero {
+    background-color: var(--color-forest);
+    padding: 60px var(--spacing-md) 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .boutiqueHeroTitle {
+    font-family: var(--font-primary);
+    font-size: clamp(32px, 5vw, 56px);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .boutiqueHeroSub {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    max-width: 480px;
+    margin: 0 auto var(--spacing-md);
+  }
+  
+  .boutiqueStripe {
+    height: 6px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--color-primary) 0px, var(--color-primary) 20px,
+      var(--color-accent) 20px, var(--color-accent) 40px,
+      var(--color-olive) 40px, var(--color-olive) 60px,
+      var(--color-forest) 60px, var(--color-forest) 80px
+    );
+    margin-top: var(--spacing-md);
+  }
+  
+  .boutiqueContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .boutiqueCount {
+    color: var(--color-text-muted);
+    font-size: 14px;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .boutiqueEmpty {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--color-text-muted);
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    .boutiqueHero {
+      padding: 40px var(--spacing-md) 32px;
+    }
+  }

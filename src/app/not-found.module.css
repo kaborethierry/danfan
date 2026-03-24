@@ -1,0 +1,88 @@
+.wrapper {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg);
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.content {
+  text-align: center;
+  max-width: 480px;
+  position: relative;
+}
+
+.pattern {
+  width: 120px;
+  height: 8px;
+  margin: 0 auto var(--spacing-lg);
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-primary) 0px, var(--color-primary) 16px,
+    var(--color-accent) 16px, var(--color-accent) 32px,
+    var(--color-forest) 32px, var(--color-forest) 48px
+  );
+  border-radius: var(--radius-sm);
+}
+
+.code {
+  font-size: 96px;
+  font-weight: 700;
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: var(--spacing-sm);
+}
+
+.title {
+  font-size: 28px;
+  font-family: var(--font-primary);
+  color: var(--color-title);
+  margin-bottom: var(--spacing-md);
+}
+
+.message {
+  color: var(--color-text-muted);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-lg);
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  padding: 12px 28px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.btnPrimary:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+.btnSecondary {
+  padding: 12px 28px;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btnSecondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
