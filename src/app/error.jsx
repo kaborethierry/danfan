@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
 import styles from './error.module.css';
 
 export default function Error({ error, reset }) {
@@ -20,9 +21,9 @@ export default function Error({ error, reset }) {
           <button onClick={reset} className={styles.btnRetry}>
             Réessayer
           </button>
-          <a href="/" className={styles.btnHome}>
+          <Link href="/" className={styles.btnHome}>
             Retour à l&apos;accueil
-          </a>
+          </Link>
         </div>
       </div>
     </div>

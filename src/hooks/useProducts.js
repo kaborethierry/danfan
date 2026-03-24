@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { getProducts } from '@/lib/api';
 
 export function useProducts(filters = {}) {
@@ -6,21 +6,22 @@ export function useProducts(filters = {}) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const fetchProducts = useCallback(async () => {
+    setLoading(true);
+    try {
+      const data = await getProducts(filters);
+      setProducts(data);
+      setError(null);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }, [filters]);
+
   useEffect(() => {
-    const fetchProducts = async () => {
-      setLoading(true);
-      try {
-        const data = await getProducts(filters);
-        setProducts(data);
-        setError(null);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
     fetchProducts();
-  }, [JSON.stringify(filters)]);
+  }, [fetchProducts]);
 
   return { products, loading, error };
 }

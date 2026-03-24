@@ -8,6 +8,7 @@ export default function About() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
+    const currentSection = sectionRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -19,13 +20,13 @@ export default function About() {
       { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentSection) {
+      observer.observe(currentSection);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSection) {
+        observer.unobserve(currentSection);
       }
     };
   }, []);
@@ -36,18 +37,24 @@ export default function About() {
         <div className={styles.grid}>
           <div className={styles.imageWrapper}>
             <div className={styles.image}>
-              <img src="/images/about-image1.jpg" alt="Artisanat DanFaniment" />
+              <Image
+                src="/images/about-image.jpg"
+                alt="Artisanat DanFaniment"
+                width={600}
+                height={500}
+                style={{ objectFit: 'cover' }}
+              />
             </div>
             <div className={styles.badge}>Made in Burkina Faso 🇧🇫</div>
           </div>
 
           <div className={styles.content}>
             <span className={styles.tag}>Notre Histoire</span>
-            <h2 className={styles.title}>L'élégance du Faso Danfani</h2>
+            <h2 className={styles.title}>L&apos;élégance du Faso Danfani</h2>
             <div className={styles.divider} />
             <p className={styles.text}>
               DanFaniment est née de la passion pour le tissu traditionnel Faso Danfani,
-              ce coton tissé à la main qui incarne l'identité burkinabè. Chaque pièce
+              ce coton tissé à la main qui incarne l&apos;identité burkinabè. Chaque pièce
               est unique, façonnée avec amour par nos artisans locaux.
             </p>
             <p className={styles.text}>

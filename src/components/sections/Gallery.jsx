@@ -39,6 +39,7 @@ export default function Gallery() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const currentSection = sectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -49,39 +50,50 @@ export default function Gallery() {
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentSection) {
+      observer.observe(currentSection);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection);
+      }
+    };
   }, []);
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isModalOpen]);
 
   const openModal = (image) => {
     setSelectedImage(image);
     setIsModalOpen(true);
-    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedImage(null);
-    document.body.style.overflow = 'unset';
   };
 
   return (
     <section ref={sectionRef} className={styles.gallery}>
       <div className={styles.container}>
-        {/* En-tête de la galerie */}
         <div className={styles.header}>
           <span className={styles.tag}>Notre Artisanat</span>
-          <h2 className={styles.title}>Galerie d'Inspiration</h2>
+          <h2 className={styles.title}>Galerie d&apos;Inspiration</h2>
           <div className={styles.divider} />
           <p className={styles.subtitle}>
-            Découvrez la beauté et l'authenticité de nos créations en pagne tissé Faso Danfani
+            Découvrez la beauté et l&apos;authenticité de nos créations en pagne tissé Faso Danfani
           </p>
         </div>
 
-        {/* Grille d'images */}
         <div className={`${styles.grid} ${isVisible ? styles.visible : ''}`}>
           {galleryImages.map((image, index) => (
             <div
@@ -109,7 +121,6 @@ export default function Gallery() {
           ))}
         </div>
 
-        {/* Modal pour afficher l'image en grand */}
         {isModalOpen && selectedImage && (
           <div className={styles.modal} onClick={closeModal}>
             <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>

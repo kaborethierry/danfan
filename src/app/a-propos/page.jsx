@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import Image from 'next/image';
 import styles from './page.module.css';
 
 export const metadata = {
@@ -24,7 +26,13 @@ export default function AProposPage() {
       <section className={styles.aboutStory}>
         <div className={styles.aboutStoryGrid}>
           <div className={styles.aboutStoryImage}>
-            <img src="/images/about-atelier.jpg" alt="Atelier DanFaniment" />
+            <Image
+              src="/images/about-atelier.jpg"
+              alt="Atelier DanFaniment"
+              width={600}
+              height={500}
+              style={{ objectFit: 'cover' }}
+            />
           </div>
           <div className={styles.aboutStoryText}>
             <span className={styles.aboutTag}>Notre mission</span>
@@ -67,7 +75,9 @@ export default function AProposPage() {
 
       <section className={styles.aboutCta}>
         <h2 className={styles.aboutCtaTitle}>Découvrez nos collections</h2>
-        <a href="/boutique" className={styles.aboutCtaBtn}>Voir la boutique</a>
+        <Link href="/boutique" className={styles.aboutCtaBtn}>
+          Voir la boutique
+        </Link>
       </section>
     </div>
   );

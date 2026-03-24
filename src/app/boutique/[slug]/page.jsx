@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import ProductGrid from '@/components/products/ProductGrid';
 import { getProductBySlug, getProducts } from '@/lib/api';
@@ -33,9 +35,9 @@ export default async function ProductPage({ params }) {
   return (
     <div className={styles.productPage}>
       <nav className={styles.productBreadcrumb} aria-label="Fil d'Ariane">
-        <a href="/">Accueil</a>
+        <Link href="/">Accueil</Link>
         <span aria-hidden="true"> / </span>
-        <a href="/boutique">Boutique</a>
+        <Link href="/boutique">Boutique</Link>
         <span aria-hidden="true"> / </span>
         <span>{product.name}</span>
       </nav>
@@ -43,12 +45,19 @@ export default async function ProductPage({ params }) {
       <div className={styles.productDetail}>
         <div className={styles.productGallery}>
           <div className={styles.productMainImage}>
-            <img src={product.image} alt={product.name} />
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              style={{ objectFit: 'cover' }}
+              priority
+            />
           </div>
         </div>
 
         <div className={styles.productInfo}>
-          <span className={styles.productBadge}>{product.category}</span>
+          <span className={styles.productBadge}>{product.category === 'homme' ? 'Homme' : 'Femme'}</span>
           <h1 className={styles.productName}>{product.name}</h1>
           <p className={styles.productPrice}>{formatPrice(product.price)}</p>
           <div className={styles.productDivider} />

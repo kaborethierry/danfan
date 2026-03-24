@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import useCart from '@/hooks/useCart';
 import { formatPrice } from '@/utils/formatPrice';
 import styles from './CartItem.module.css';
@@ -18,7 +19,13 @@ export default function CartItem({ item }) {
   return (
     <div className={styles.item}>
       <div className={styles.image}>
-        <img src={item.image} alt={item.name} />
+        <Image
+          src={item.image}
+          alt={item.name}
+          width={80}
+          height={80}
+          style={{ objectFit: 'cover' }}
+        />
       </div>
 
       <div className={styles.info}>

@@ -19,9 +19,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Fermer le menu quand la route change
   useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  }, [pathname, isMenuOpen]);
 
   // Empêcher le scroll quand le menu est ouvert
   useEffect(() => {
@@ -51,7 +54,6 @@ export default function Navbar() {
             DanFaniment
           </Link>
 
-          {/* Desktop Navigation */}
           <div className={styles.desktopNav}>
             {navLinks.map((link) => (
               <Link
@@ -68,7 +70,6 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button - Hamburger parfait */}
           <button
             className={styles.menuBtn}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -84,13 +85,11 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Navigation Overlay */}
       <div 
         className={`${styles.mobileOverlay} ${isMenuOpen ? styles.open : ''}`} 
         onClick={() => setIsMenuOpen(false)}
       />
       
-      {/* Mobile Navigation Menu */}
       <div className={`${styles.mobileNav} ${isMenuOpen ? styles.open : ''}`}>
         <div className={styles.mobileNavHeader}>
           <span className={styles.mobileLogo}>DanFaniment</span>
