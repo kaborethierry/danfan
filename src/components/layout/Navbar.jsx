@@ -11,6 +11,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
+  // Gestion du scroll pour l'effet sticky
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 80);
@@ -19,12 +20,13 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Fermer le menu quand la route change
+  // Fermer le menu quand la route change - Utilisation de useEffect avec condition
   useEffect(() => {
     if (isMenuOpen) {
       setIsMenuOpen(false);
     }
-  }, [pathname, isMenuOpen]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   // Empêcher le scroll quand le menu est ouvert
   useEffect(() => {
@@ -37,6 +39,14 @@ export default function Navbar() {
       document.body.style.overflow = 'unset';
     };
   }, [isMenuOpen]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(prev => !prev);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   const navLinks = [
     { href: '/', label: 'Accueil' },
@@ -72,7 +82,7 @@ export default function Navbar() {
 
           <button
             className={styles.menuBtn}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={toggleMenu}
             aria-label="Menu"
             aria-expanded={isMenuOpen}
           >
@@ -85,17 +95,19 @@ export default function Navbar() {
         </div>
       </nav>
 
+      {/* Mobile Overlay */}
       <div 
         className={`${styles.mobileOverlay} ${isMenuOpen ? styles.open : ''}`} 
-        onClick={() => setIsMenuOpen(false)}
+        onClick={closeMenu}
       />
       
+      {/* Mobile Navigation Menu */}
       <div className={`${styles.mobileNav} ${isMenuOpen ? styles.open : ''}`}>
         <div className={styles.mobileNavHeader}>
           <span className={styles.mobileLogo}>DanFaniment</span>
           <button 
             className={styles.mobileCloseBtn} 
-            onClick={() => setIsMenuOpen(false)}
+            onClick={closeMenu}
             aria-label="Fermer"
           >
             ✕
@@ -107,7 +119,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={`${styles.mobileNavLink} ${pathname === link.href ? styles.active : ''}`}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={closeMenu}
             >
               {link.label}
             </Link>
@@ -118,7 +130,7 @@ export default function Navbar() {
             <CartIcon />
             <span>Mon panier</span>
           </div>
-          <Link href="/boutique" className={styles.mobileOrderBtn} onClick={() => setIsMenuOpen(false)}>
+          <Link href="/boutique" className={styles.mobileOrderBtn} onClick={closeMenu}>
             Commander
           </Link>
         </div>
