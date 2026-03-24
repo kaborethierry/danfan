@@ -38,7 +38,7 @@ export default function About() {
           <div className={styles.imageWrapper}>
             <div className={styles.image}>
               <Image
-                src="/images/about-image.jpg"
+                src="/images/about-image1.jpg"
                 alt="Artisanat DanFaniment"
                 width={600}
                 height={500}
